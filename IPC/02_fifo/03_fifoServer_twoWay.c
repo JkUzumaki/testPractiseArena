@@ -22,21 +22,19 @@ int main()
 	fd = open(FIFO_FILE, O_RDWR);						// Opening the fifo in read write mode
 	while(1){
 		// READ
-		read_bytes = read(fd, readbuf, sizeof(readbuf));	
-		readbuf[read_bytes] = '\0';
+		read_bytes = read(fd, readbuf, sizeof(readbuf));		// Number of bytes read is returned	
+		readbuf[read_bytes] = '\0';					// Null char to indicate the end of the string
 		printf("FIFOSERVER: Receiving data : \"%s\" and length is %d\n", readbuf, (int) strlen(readbuf));
-		//printf("FIFOSERVER: Receiving data : \"%s\" and length is %d\n", readbuf, read_bytes);
-		to_end = strcmp(readbuf, "end");
+		to_end = strcmp(readbuf, "end");				// Check the read data is equal to end of the string
 
-		if(to_end == 0){
-			close(fd);
+		if(to_end == 0){						
+			close(fd);						// When string is equal to closing data, close the file descriptor
 			break;
 		}
-		reverse_string(readbuf);
+		reverse_string(readbuf);					// Calling the reverse string function
 		printf("FIFOSERVER: Sending Reversed string: \"%s\" and lenght is %d\n", readbuf, (int) strlen(readbuf));
-		//printf("FIFOSERVER: Sending Reversed string: \"%s\" and lenght is %d\n", readbuf, read_bytes);
 		//WRITE
-		write(fd, readbuf, strlen(readbuf));
+		write(fd, readbuf, strlen(readbuf));				// Writing to fifo
 		sleep(2);
 	}
 	return 0;
