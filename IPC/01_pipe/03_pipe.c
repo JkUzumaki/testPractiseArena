@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<unistd.h>
-
+/*
+	read  -> index 0
+	write -> index 1
+*/
 int main()
 {
 	int p[2];

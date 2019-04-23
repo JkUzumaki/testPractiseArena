@@ -15,10 +15,12 @@ int main()
 	int to_end;
 	int read_bytes;
 	//Creating a fifo file
-	mkfifo(FIFO_FILE, S_IFIFO | 0777);				
+	mkfifo(FIFO_FILE, S_IFIFO | 0777);
 	strcpy(end, "end");
 	while(1){
+		// open(file_name, permission)
 		fd = open(FIFO_FILE, O_RDONLY);				// Open the fifo file in read only mode
+		// read system call
 		read_bytes = read(fd, readbuf, sizeof(readbuf));	// Read the data from the buffer and returns the number of char read
 		readbuf[read_bytes] = '\0';				// Adding null char to denote the end of the string
 		printf("Received string: \"%s\" and length is %d\n", readbuf, (int)strlen(readbuf));	// readbuf contains the data read

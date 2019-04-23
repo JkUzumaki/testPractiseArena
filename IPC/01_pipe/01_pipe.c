@@ -18,3 +18,11 @@ int main()
 	}
 	return 0;
 }
+
+/*
+	int pipe_name[2];
+		pipe_name[1] -> write command
+		pipe_name[0] -> read command
+	write ( write_end_of_pipe, buffer, size of buffer)
+	read ( read_end_of_pipe, buffer, size of buffer)
+*/

@@ -3,9 +3,12 @@
 
 int main()
 {
+	// pipe read end -> 0
+	// pipe write end -> 1
 	int p[2];
 	int status;
 	int pid;
+	// checking is pipe is created using the pipe system call
 	status = pipe(p);
 	if(status == -1){
 		printf("Pipe not created\n");
