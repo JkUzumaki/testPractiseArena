@@ -3,7 +3,7 @@
 class Base{
 public:
 	char* name;
-	void display(){
+virtual	void display(){
 		std::cout << "name " << name << std::endl;
 	}
 };
