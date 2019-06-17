@@ -1,0 +1,7 @@
+Initializing the array:
+        1. Array can be initialized based on the position (via index).
+        2. Array can be initialized based on the initializer list.
+
+        uninitialized data are assigned with zero vale, which is referred to as zero initialization.
+
+	we can define a array without giving the size during the initialization, but the drawback of that is method updation of that array is not possible
