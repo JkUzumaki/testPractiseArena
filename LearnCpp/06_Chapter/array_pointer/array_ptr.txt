@@ -1,0 +1,29 @@
+Array decay:
+
+	When a array is declared lets say,
+		int array[5] = {1,2,3,4,5};
+	Here the compiler knows array is of type int[5] and contains the value 1 in array[0], 2 in array[1] and so on.
+	But when they are used in some expression that array is decay(implicit convert to pointer) that points to first element of the array.
+
+	NOTE:
+		"array" and "pointer of array" are not the same.
+		Because
+			Array is of type int[5] and its values are array elements.
+			A pointer to array is of type int* and value would be address of the first element of the array.
+		
+		Array elements can be accessed through pointer but information derived through array type cannot be accessed from the pointer.
+		
+		When using sizeof operator on array it returns the entire size of array but when used on pointer it returns the memory address.
+
+Passing fixed array to function:
+	Copying large array can be expensive, c++ does not copy array when passed through function. When passing as argument, the fixed array decay into pointer.
+	and so the pointer is passed to the function.
+
+	So when passing a array to a function it is automatically converted to pointer hence when calculating the size inside the function will provide the 
+	size of the pointer, so pass the size seperately if the size is needed for the function.	
+	
+	void fun(arr[]) is SAME as void fun(*arr)
+
+	NOTE:
+		Array which is a part of structure or class do not decay when passed to a function.
+

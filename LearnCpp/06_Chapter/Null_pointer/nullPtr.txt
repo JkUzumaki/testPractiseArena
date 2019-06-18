@@ -1,0 +1,13 @@
+When a pointer is not initialized during their instantiation, they will point to some garbage address by default.
+A pointer can also hold null value instead of address. A null value is a special value that means the pointer is not pointing to anything.
+A pointer holding a null value is called NULL POINTER.
+
+Note:
+	Deferencing a pointer holding garbage address lead to undefined behaviour and the same applies to null pointer as its not holding.
+	Deferencing means "going to the address the pointer contains and accessing the value in it".
+
+But the NULL is a integer, using of integer for pointer is not a good one. Hence in C++11 nullptr was introduced.
+
+nullptr is a keyword and rvalue constant.
+C++ will convert nullptr to any pointer type.
+ 

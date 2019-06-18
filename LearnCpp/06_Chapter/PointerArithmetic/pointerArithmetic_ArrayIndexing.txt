@@ -1,0 +1,14 @@
+Pointer Arithmetic:
+	C++ allows to perform addition or subration on the pointer.
+	if ptr points to an integer and ptr+1 is the address of the next integer in the memory.
+
+Pointer arithmetic and magic behind indexing:
+	Fixed array can point to first element of the array.
+	performing add or sub on that array will make the 
+
+	Note:
+		The operator *  have higher precedence than +, Hence panretheses is used to when + operations needs to be done before * operation.
+		array[n] is same as (array + n)
+
+Using pointer to iterate through the array:
+		
