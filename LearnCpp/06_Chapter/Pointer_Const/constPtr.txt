@@ -1,0 +1,18 @@
+Assign const int to a non const int ptr will generate error.
+	Because, 
+	const variable cannot be changed.
+	non const pointer value can be changed by dereferencing the value.
+	Since it violates the intention of using const
+
+When the pointer is a const and the value is not const, still the statement is valid
+Here the value can be modified but the content cannot be modified through the pointer
+But the variable the const pointer point to can be changed.
+
+const pointer
+	To make a pointer constant (whose value cannot be changed after initialization)
+	Here the pointer can point to only one location and cannot be modified.
+	Here the value the pointer pointing to can be modified provided value is not a const.
+	
+	Its also possible to point the pointer to a const location along with value not be modified through pointer.
+	But still the value can be modified through the value variable.
+

@@ -1,0 +1,17 @@
+A reference is a type of C++ variable that acts as an alias to another object or value.
+C++ support three kinds of references:
+	1. Reference to non const
+	2. Reference to const
+	3. R value reference
+
+Note:
+	Reference must be initialiazed when created.
+	A const value needs a const reference
+	Reference cannot be reassigned.
+	Reference are much safer than pointers.
+	
+using reference to pass array to a function
+	Here the decaying(where pointer to value) does not happen, because of which size cannot be caluclated in pointer but 
+	with reference we can pass the reference and size can be calculated.
+
+ 
