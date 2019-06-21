@@ -7,21 +7,21 @@ struct Node
 };
 struct Node *Head=NULL;
 
-void add(struct Node *hd, int data)
+void add(int data)
 {
 	//Created a node and allocated the memory and assigned data
 	struct Node *temp =  malloc(sizeof(struct Node));
 	temp->data = data;
-	//temp->next = NULL;
 	// Assign the value of hd 
-	temp->next = hd;
-	hd = temp;
+	temp->next = Head;
+	Head = temp;
 }
 
-void display(struct Node *hd)
+void display()
 {
 	//Assign the value to the temp
-	struct Node *temp = hd;
+	struct Node *temp = Head;
+	printf("Printing the queue\n");
 	while(temp){
 		printf("%d-->", temp->data);
 		temp = temp->next;
@@ -29,12 +29,12 @@ void display(struct Node *hd)
 	printf("\n");
 }
 
-int delete(struct Node *hd)
+int delete()
 {
  	int flg = 0;
 	struct Node *temp;
 	struct Node *temp1;
-	temp = hd;
+	temp = Head;
 	temp1 = temp->next;
 	if(temp == NULL){
 		return 0;
@@ -59,14 +59,14 @@ int main()
 	//Allocate a memory for new node
 	int v;
 	// Send the address of the node as parameter
-	add(Head, 10);
-	add(Head, 20);
-	add(Head, 30);
-	add(Head, 40);
-	add(Head, 50);
-	display(Head);
-//	v = delete(Head);
+	add( 10);
+	add( 20);
+	add( 30);
+	add( 40);
+	add( 50);
+	display();
+	v = delete();
 	printf("The deleted data %d\n",v);
-	display(Head);	
+	display();	
 	return 0;
 }
