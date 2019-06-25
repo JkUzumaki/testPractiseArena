@@ -14,5 +14,4 @@ public:
         {
            return os<<ob.name<<"  "<<ob.year;
         }
-
 };

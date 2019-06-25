@@ -1,5 +1,11 @@
 #include<iostream>
 #include "student.h"
+
+/*
+	1. Friend class is needed even if there is nested class.
+	2. 
+*/
+
 template <class T>
 class queue
 {
@@ -17,9 +23,76 @@ public:
 	}
 	void insert(T value);
 	T remove();
-	void display();
+//	void display();
+	friend class iterate;
+
+	// START of iterate class
+	class iterate
+	{
+		queue mqueue;
+		public:
+		iterate(queue t):mqueue(t)
+		{}
+		//Overloading ++
+		// prefix we dont need to pass any int
+		bool operator++()
+		{
+			if(mqueue.Head==NULL)
+			return false;
+			else{
+				mqueue.Head=mqueue.Head->next;
+				return true;
+			}		
+		// postfix we need to pass parameter to mention its a postfix
+		}
+		bool operator++(int)
+		{
+			if(mqueue.Head==NULL)
+			return false;
+			else{
+				mqueue.Head=mqueue.Head->next;
+				return true;
+			}	
+			
+		}
+		// Check if head is not NULL
+		bool check();
+		/*bool check()
+		{
+			if(mqueue.Head==NULL)
+			return false;
+			else
+			{
+				return true;
+			}
+		}
+		*/
+		/*Node* operator->()
+		{
+			return mqueue.Head;
+		}*/
+		T getdata(){
+			return mqueue.Head->data;
+		}
+	};
+	// END of iterate class
+	iterate begin()
+	{
+		return iterate(*this);
+	}
 };
 
+template <class T>
+bool queue<T>::iterate::check()
+		{
+			if(mqueue.Head==NULL)
+			return false;
+			else
+			{
+				return true;
+			}
+		}
+		
 template <class T>
 void queue<T>::insert(T value)
 {
@@ -28,7 +101,7 @@ void queue<T>::insert(T value)
 	temp->next = Head;
 	Head = temp;
 }
-
+/*
 template <class T>
 void queue<T>::display()
 {
@@ -39,7 +112,7 @@ void queue<T>::display()
 	}
 	std::cout << "\n";
 }
-
+*/
 template <class T>
 T queue<T>::remove()
 {
@@ -79,16 +152,23 @@ int main()
 	//Display
 	obj.display();
 */
-       queue<student> ob1;
-	student s1 ("ram", 2000);	
-	student s2("prem", 2001);
-	student s3("yash", 2002);
-	student s4("dev", 1999);
+    queue<student> ob1;
+	student s1("Ram", 2000);	
+	student s2("Prem", 2001);
+	student s3("Yash", 2002);
+	student s4("Dev", 1999);
 	ob1.insert(s1);
 	ob1.insert(s2);
 	ob1.insert(s3);
 	ob1.insert(s4);
-	ob1.display();
-	std::cout << "The deleted data " << ob1.remove() << std::endl;
-	ob1.display();		
+//	ob1.display();
+	//std::cout << "The deleted data " << ob1.remove() << std::endl;
+//	ob1.display();	
+	queue<student>::iterate it=ob1.begin();
+	while(it.check())
+	{
+		std::cout << it.getdata() << "\n";
+		it++;
+	}	
+	std::cout << "\n";
 }
