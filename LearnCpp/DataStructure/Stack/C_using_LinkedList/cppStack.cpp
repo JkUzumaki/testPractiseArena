@@ -3,6 +3,9 @@
 
 int size = 0;
 int asize = 0;
+
+class iterate;
+
 template <class T>
 class stack
 {
@@ -22,16 +25,41 @@ public:
         if(Head != NULL)
             delete Head;
     }
-     void insert(T data);
-     void remove();
-     void display();
+    void remove();
+    void display();
+    void insert(T data);
+    friend class iterate;
 };
 
 template <class T>
-void insert(T data)
+class iterate
 {
-
-}
+    stack sObj;
+public:
+    iterate(stack stk):sObj(stk)
+    {}
+    // overload prefix
+    bool operator++()
+    {
+        if(sObj.Head == NULL)
+            return false;
+        else{
+            sObj.Head = sObj.Head->next;
+            return true;
+        }
+    }
+    // overload postfix
+    bool operator++(int)
+    {
+        if(sObj.Head == NULL)
+            return false;
+        else{
+            sObj.Head = sObj.Head->next;
+            return true;
+        }
+    }
+    
+};
 
 template <class T>
 void stack<T>::insert(T data)
@@ -82,6 +110,7 @@ void stack<T>::remove()
     }
 }
 
+/*
 template <class T>
 void stack<T>::display()
 {
@@ -101,7 +130,7 @@ void stack<T>::display()
         return;
     }
 }
-
+*/
 
 
 int main()
@@ -124,7 +153,6 @@ int main()
     ob1.insert(s3);
     ob1.insert(s4);
     ob1.insert(s5);
-    
     ob1.display();
     ob1.remove();
     ob1.display();

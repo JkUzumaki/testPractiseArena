@@ -84,14 +84,14 @@ public:
 
 template <class T>
 bool queue<T>::iterate::check()
-		{
-			if(mqueue.Head==NULL)
-			return false;
-			else
-			{
-				return true;
-			}
-		}
+{
+	if(mqueue.Head==NULL)
+	return false;
+	else
+	{
+		return true;
+	}
+}
 		
 template <class T>
 void queue<T>::insert(T value)
