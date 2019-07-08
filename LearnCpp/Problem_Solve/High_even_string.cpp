@@ -22,8 +22,8 @@ int main()
 		}else{
 			if(wcount > max)			
 				if(wcount % 2 == 0){
-						maxStr = newStr;
-						max = wcount;
+					maxStr = newStr;
+					max = wcount;
 				}
 			newStr = "";
 			wcount = 0;

@@ -1,0 +1,15 @@
+Data:
+	Anything that can be recorded
+		Eg. Text, Number, Images, Video, Speech etc
+	From this we design data base.
+	
+Database:
+	Collection of related data.
+	
+Traditionally database is applied for text and numbers.
+
+real time database are usually used in production.
+
+once data are decided we need to push the element in the data base.
+Every database is depended on computer.
+Construct the database and manipulate it.
