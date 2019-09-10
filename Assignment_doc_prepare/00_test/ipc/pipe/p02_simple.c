@@ -20,18 +20,22 @@ int main()
 	char writeMsg[20];	
 	memset(readMsg, 0, sizeof(readMsg));
 	memset(writeMsg, 0, sizeof(writeMsg));
+	printf("\n\nBefore performing any operations:");
 	printf("\nreadMsg contains : %s", readMsg);
 	printf("\nwriteMsg contains : %s", writeMsg);
 	printf("\nEnter the data to the pipe:");
 	scanf("%s", &writeMsg);
+	printf("\n\nAfter writing data to the pipe");
 	write(p[1], writeMsg, sizeof(writeMsg));
 	printf("\nwriteMsg contains : %s", writeMsg);
 	printf("\nreadMsg contains : %s", readMsg);
-	printf("\data processing.....");
-	sleep(2);
+	printf("\ndata processing.....");
 	printf("\nThe data obtained through read end: ")	;
 	sleep(1);
 	read(p[0], readMsg, sizeof(readMsg));
+	printf("\n\nAfter performing read operation on pipe:");
+	printf("\nwriteMsg contains : %s", writeMsg);
 	printf("\nreadMsg contains : %s", readMsg);
+	printf("\n");
 	return 0;
 }
