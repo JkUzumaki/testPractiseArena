@@ -1,0 +1,18 @@
+Before performing any operations:
+readMsg contains : 
+writeMsg contains : 
+Enter the data to the pipe:Hi
+
+
+HiAfter writing data to the pipe
+writeMsg contains : Hi
+readMsg contains : 
+data processing.....
+
+The data obtained through read end: 
+
+After performing read operation on pipe:
+writeMsg contains : Hi
+readMsg contains : 
+
+
