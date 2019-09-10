@@ -10,20 +10,20 @@ int main()
 	int pipe(p);
 	int fd = 0;
 	fd = open("test", O_CREAT, 0777);
+	char s1[20];
+	char s2[20];
 	if(fork()){
-		char s1[20];
 		memset(s1, 0, sizeof(s1));
 		printf("The Message to child:\n");
+		sleep(1);
 		scanf("%s",&s1);
-		getchar();
 		write(p[1], s1, 20);
 	}else{
-		sleep(1);
-		char s2[20];
 		memset(s2, 0, sizeof(s2));
-		printf("The Message from parent:");
+		printf("The Message from parent:\n");
 		read(p[0], s2, 20);
-		printf("s2: %s", s2);
+		printf("data: %s\n", s2);
+		close(p[0]);
 	}	
 	return 0;
 }
