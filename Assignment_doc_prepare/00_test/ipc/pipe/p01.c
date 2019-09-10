@@ -18,10 +18,11 @@ int main()
 		sleep(1);
 		scanf("%s",&s1);
 		write(p[1], s1, 20);
+		
 	}else{
 		memset(s2, 0, sizeof(s2));
-		printf("The Message from parent:\n");
 		read(p[0], s2, 20);
+		printf("The Message from parent:\n");
 		printf("data: %s\n", s2);
 		close(p[0]);
 	}	
