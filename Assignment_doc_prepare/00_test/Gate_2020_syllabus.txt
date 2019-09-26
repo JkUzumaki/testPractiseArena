@@ -6,7 +6,8 @@ Section 1: Engineering Mathematics
 Discrete Mathematics: 
 ~~~~~~~~~~~~~~~~~~~~~
 Propositional and first order logic. Sets, relations, functions, partial orders and
-lattices. Groups. Graphs: connectivity, matching, coloring. Combinatorics: counting, recurrence relations,
+lattices. Groups. 
+Graphs: connectivity, matching, coloring. Combinatorics: counting, recurrence relations,
 generating functions.
 
 Linear Algebra: 
