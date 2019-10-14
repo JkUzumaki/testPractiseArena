@@ -1,0 +1,6 @@
+To view:
+	ipcs
+	// This list the msgq id 
+To remove:
+	ipcrm -q id
+	//The id to be removed

@@ -1,5 +1,5 @@
 #include<sys/ipc.h>
-//#include<sys/types.h>
+#include<sys/types.h>
 #include<sys/msg.h>
 #include<stdio.h>
 
@@ -20,4 +20,3 @@ int main()
 	msgctl(fd, IPC_RMID, NULL);
 	return 0;	
 }
-

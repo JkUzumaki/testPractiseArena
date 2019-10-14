@@ -3,10 +3,11 @@
 #include<sys/msg.h>
 #include<stdio.h>
 
-	struct msgbuff{
-		long mtype;
-		char mtext[20];
-	}msg;
+struct msgbuff{
+	long mtype;
+	char mtext[20];
+}msg;
+
 int main()
 {
 
@@ -20,7 +21,6 @@ int main()
 		printf("Enter data:\n");
 		scanf("%s", msg.mtext);
 		msgsnd(fd, &msg,sizeof(msg), 0);
-
 	//}
 	printf("Message added to the queue: %s\n", msg.mtext);
 	return 0;	

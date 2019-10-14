@@ -1,20 +1,16 @@
 #include<iostream>
 #include<fstream>
 #include<unistd.h>
-
 int main()
 {	
 	std::string name ;
 	std::string data = "";
 	std::cout << "Enter the file name:\n";
 	std::cin >> name;
-	
 	int flag = 0;
 	std::ifstream file;
-
 	//opening the file
 	file.open(name);
-	
 	if(file){
 		// file is open
 		//std::cout << "The file is open\n";
@@ -36,9 +32,8 @@ int main()
 		// file is not open
 		std::cout << "The file is not openable\n";
 	}
-
 	//closing the file
 	file.close();
-
 	return 0;
 }
+
