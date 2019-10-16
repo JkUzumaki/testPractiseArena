@@ -24,51 +24,32 @@ BST* Insert(BST** root, int value)
 	BST* Node = NULL;
 	Node = getBST(value);
 	
-	if(*root == NULL){
+	if(**Test == NULL){
 		//Empty BST fill
 		std::cout << "First Node\n";
 		*root = getBST(value);
-	}else if((*root)->data <= value){
+	}else if((**Test)->data <= value){
 		//Left node fill
-		while((**Test)->data){
-			if((**Test)->data > value){
-				(**Test)->right = Node;
-				break;
-			}
-			**Test = (**Test)->left;
-		}
-		(**Test)->left = Node;
-	}else if((*root)->data > value){
+		Insert((**Test)->left, value);
+		//(**Test)->left = Node;
+	}else if((**Test)->data > value){
 		//Right node fill
-		//Node = getBST(value);
-		//std::cout << "(*root)->data " << (*root)->data << " " << value << std::endl;	//For test
-		(*root)->right = Node;
+		Insert((**Test)->right, value);
+		//(**Test)->right = Node;
 	}
-	return *root;
+	return **Test;
 }
 
-//Display the data in BST
-void display(BST* root)
-{
-	/*
-	//Fill the 
-	if(root != NULL){
-		std::cout << "Data: "<< root->data << "\n";
-		std::cout << "Left address " << root->left << "\n";
-		std::cout << "Right address " << root->right << "\n";		
-	}else{
-		std::cout << "The list is empty\n";
+void print(BST* node){
+	//std::cout << "Print fn\n";
+	if(node == NULL)
+	{
+	//	std::cout << "BST is empty\n";
+		return;
 	}
-	*/
-	while(root){
-		std::cout << root->data << "\n";
-		if(root->left != NULL){
-			root = root->left;
-			
-		}
-		//root = root->right;
-		
-	}
+	print(node->right);
+	std::cout << node->data << " ";
+	print(node->left);
 }
 
 int main()
@@ -76,6 +57,9 @@ int main()
 	BST* root = NULL;
 	root = Insert(&root, 20);
 	root = Insert(&root, 10);
-	root = Insert(&root, 13);
-	display(root);
+	root = Insert(&root, 30);
+	root = Insert(&root, 35);
+	root = Insert(&root, 5);
+	print(root);
+	std::cout << std::endl;
 }
