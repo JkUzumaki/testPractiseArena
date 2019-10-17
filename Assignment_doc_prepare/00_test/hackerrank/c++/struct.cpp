@@ -13,6 +13,9 @@ int main()
 	Student s;
 	std::cin >> s.Age;
 	std::cin >> s.fName;
+	while(1){
+		if(s.(strlen))
+	}
 	std::cin >> s.lName;
 	std::cin >> s.Standard;
 	
