@@ -41,8 +41,6 @@ int main()
 		 	big = cmp;
 		 test++;
 	}
-	//For TEST
-	std::cout << "big : " << big << std::endl;
 
 	//Getting the prime number
 	test = big;
@@ -54,12 +52,26 @@ int main()
 		 test--;
 	}
 	sort(vPrime.begin(), vPrime.end());
+/*
 	std::cout << "Prime number in the given list\n";
 	for(std::vector<int>::iterator it = vPrime.begin(); it != vPrime.end(); it++){
-		 std::cout << *it << " ";
+		std::cout << *it << " ";
 	}
 	std::cout << "\nThe size of the vector: " << vPrime.size();
-	std::cout << std::endl;
+*/
+	int start, end; 
+	test = 0;
+	while(tEntry--){
+		start = *(aPtr+test);
+		test++;
+		end = *(aPtr+test);
+		test++;
+		for(std::vector<int>::iterator it = vPrime.begin(); it != vPrime.end(); it++){
+			if(*it >= start && *it <= end)
+				std::cout << *it << " ";
+		}
+		std::cout << std::endl;
+	}
 	delete [] aPtr;
 	return 0;
 }
