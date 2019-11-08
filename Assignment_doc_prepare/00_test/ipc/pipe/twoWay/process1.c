@@ -17,18 +17,20 @@ int main()
 	char str2[20];
 
 	if(fork()){
+		//Parent process
 		memset(str1, 0, sizeof(str1));
 		memset(str2, 0, sizeof(str2));
 		//Write
 		printf("Parent: Message to child\n");
 		gets(str1);
-		write(p1[1], str1, 20);
+		write(p1[1], str1, 20);//Write in 1 index
 		//Read
-		read(p2[0],str2, 20);
+		read(p2[0],str2, 20);//Read in 0 index
 		printf("Parent: The Message from child\n");
-		printf("%s", str2);
+		printf("%s\n", str2);
 		sleep(1);
 	}else{
+		//Child Process
 		memset(str1, 0, sizeof(str1));
 		memset(str2, 0, sizeof(str2));
 		//Read
@@ -39,7 +41,7 @@ int main()
 		printf("Child: Message to parent\n");
 		gets(str2);
 		write(p2[1], str2, 20);
-		sleep(1);
+		//sleep(1);
 	}
 	printf("\n");
 	return 0;

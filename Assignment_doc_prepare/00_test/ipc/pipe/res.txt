@@ -14,5 +14,3 @@ The data obtained through read end:
 After performing read operation on pipe:
 writeMsg contains : Hi
 readMsg contains : 
-
-
