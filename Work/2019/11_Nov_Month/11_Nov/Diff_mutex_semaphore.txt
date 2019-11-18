@@ -1,0 +1,8 @@
+What is the difference between the mutex and semaphore?
+
+Semaphore is to be used as a signaling mechanism between two process. i.e, semaphore is used to wither signal or wait.
+
+Mutex is to be used to lock and take ownership of a process until it has been unlocked this continues till the end of the process.
+
+Note:
+	Semaphore can be used to signal from an interrupte service routine (ISR) to a task.
