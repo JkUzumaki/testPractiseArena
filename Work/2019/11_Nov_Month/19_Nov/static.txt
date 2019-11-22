@@ -1,0 +1,1 @@
+1. If we use static by includeing them in a header file we cannot access it, the static function can be used only in the dame file.
